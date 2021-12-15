@@ -21,3 +21,67 @@ const text = [
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
+
+let contatore = 0;
+
+const immagineDx = document.querySelector(`.immagini-destra`);
+
+for (let i = 0; i < items.length; i++){
+    immagineDx.innerHTML += `<div class="immagine-dx">
+    <img src="${items[i]}">
+    </div>`;
+}
+
+
+const immagineSx = document.querySelector(`.immagine-sinistra`);
+
+for (let i = 0; i < items.length; i++){
+    immagineSx.innerHTML += `<div class="immagini-sx img-sx-${i}">
+    <img src="${items[i]}">
+    </div>`;
+}
+
+
+const next = document.querySelector(`.next`);
+
+next.addEventListener(`click`, function(){
+    
+    const previousImg = document.querySelector(`.img-sx-` + contatore);
+    previousImg.classList.remove(`active`);
+
+
+    if(contatore == (items.length - 1)){
+        contatore = 0
+    }else {
+    contatore++
+    }
+
+    const currentImg = document.querySelector(`.img-sx-` + contatore);
+    currentImg.classList.add(`active`);
+
+    console.log(contatore)
+    
+})
+
+
+const prev = document.querySelector(`.prev`);
+
+prev.addEventListener(`click`, function(){
+
+    const previousImg = document.querySelector(`.img-sx-` + contatore);
+    previousImg.classList.remove(`active`);
+
+    if(contatore == 0){
+        contatore = (items.length - 1)
+    }else {
+    contatore--
+    }
+
+    const currentImg = document.querySelector(`.img-sx-` + contatore);
+    currentImg.classList.add(`active`);
+
+
+    console.log(contatore)
+    
+})
+

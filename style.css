@@ -4,23 +4,47 @@
     box-sizing: border-box;
 }
 
-.my_m10_auto{
-    margin: 10% auto;
+.ms_container{
+    height: 500px;
+    margin-top:100px ;
 }
 
-.no_pm{
-    padding: 0;
-    margin: 0;
+.ms_anteprima,
+.ms_slider{
+    height: 100%;
 }
 
-.wh_100{
+.ms_anteprima img{
     width: 100%;
     height: 100%;
 }
 
-.my_img{
-    height: 100px;
+.ms_container2{
+    height: 100%;
+    position: relative;
+}
+
+.immagine-dx{
+    height: calc(100% / 5);
     width: 100%;
+}
+
+.immagini-sx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.immagine-sinistra{
+    position: relative;
+}
+
+.immagine-dx img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .my_absolute_top{
