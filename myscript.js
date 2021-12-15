@@ -33,11 +33,15 @@ for (let i = 0; i < items.length; i++){
 }
 
 
-const immagineSx = document.querySelector(`.immagine-sinistra`);
+const immaginiSx = document.querySelector(`.immagini-sinistra`);
 
 for (let i = 0; i < items.length; i++){
-    immagineSx.innerHTML += `<div class="immagini-sx img-sx-${i}">
-    <img src="${items[i]}">
+    immaginiSx.innerHTML += `<div class="immagine-sx img-sx-${i}">
+        <img src="${items[i]}">
+        <div class="img-text">
+            <h1>${title[i]}</h1>
+            <p>${text[i]}</p>
+        </div>
     </div>`;
 }
 
@@ -59,7 +63,7 @@ next.addEventListener(`click`, function(){
     const currentImg = document.querySelector(`.img-sx-` + contatore);
     currentImg.classList.add(`active`);
 
-    console.log(contatore)
+    console.log(contatore);
     
 })
 
@@ -81,7 +85,11 @@ prev.addEventListener(`click`, function(){
     currentImg.classList.add(`active`);
 
 
-    console.log(contatore)
+    console.log(contatore);
     
 })
+
+const firstImage = document.querySelector(`.img-sx-0`);
+firstImage.classList.add(`active`);
+
 
